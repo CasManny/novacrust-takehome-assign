@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import { Button } from "../ui/button";
 import { Command, CommandItem, CommandList } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { ChevronDown } from "lucide-react";
 
 const paymentFromData = [
   { icon: "/metamask.svg", name: "Metamask" },
@@ -38,7 +39,7 @@ export const PaymentFrom = ({ value, onChange }: PaymentFromProps) => {
   const handleSelect = (name: string) => {
     setSelected(name);
     setOpen(false);
-    onChange?.(name); 
+    onChange?.(name);
   };
 
   return (
@@ -60,7 +61,10 @@ export const PaymentFrom = ({ value, onChange }: PaymentFromProps) => {
               <p className="truncate">{selectedItem.name}</p>
             </>
           ) : (
-            <span className="text-gray-400">Select an option</span>
+            <>
+              <span className="text-gray-400">Select an option</span>
+              <ChevronDown className="ml-auto mr-2" />
+            </>
           )}
         </Button>
       </PopoverTrigger>
