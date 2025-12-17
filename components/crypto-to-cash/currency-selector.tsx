@@ -6,17 +6,9 @@ import { useMemo, useState } from "react";
 import { Button } from "../ui/button";
 import { Command, CommandItem, CommandList } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { currencies } from "@/lib/constants";
 
-const data = [
-  {
-    icon: "/ng.svg",
-    name: "NG",
-  },
-  {
-    icon: "/usa.jpg",
-    name: "USA",
-  },
-];
+
 
 interface CurrencySelectorProps {
   value?: string | null;
@@ -27,16 +19,16 @@ export const CurrencySelector = ({
   value,
   onChange,
 }: CurrencySelectorProps) => {
-  const [selected, setSelected] = useState(data[0].name || value);
+  const [selected, setSelected] = useState(currencies[0].name || value);
   const [open, setOpen] = useState(false);
 
   const selectedItem = useMemo(
-    () => data.find((item) => item.name === selected),
+    () => currencies.find((item) => item.name === selected),
     [selected]
   );
 
   const filteredData = useMemo(
-    () => data.filter((item) => item.name !== selected),
+    () => currencies.filter((item) => item.name !== selected),
     [selected]
   );
 

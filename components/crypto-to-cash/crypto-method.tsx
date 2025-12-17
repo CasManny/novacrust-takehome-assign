@@ -1,18 +1,14 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import { cryptoMethods } from "@/lib/constants";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { useMemo, useState } from "react";
+import { Button } from "../ui/button";
 import { Command, CommandInput, CommandItem, CommandList } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { Button } from "../ui/button";
-import { ChevronDown } from "lucide-react";
 
-const data = [
-  { icon: "/eth.svg", name: "ETH", id: "1" },
-  { icon: "/bnb.svg", name: "USDT - BNB", id: "2" },
-  { icon: "/celo.svg", name: "USDT - CELO", id: "3" },
-  { icon: "/ton.svg", name: "USDT - TON", id: "4" },
-];
+
 
 interface CryptoMethodProps {
   value?: string | null;
@@ -20,16 +16,16 @@ interface CryptoMethodProps {
 }
 
 export const CryptoMethod = ({ value, onChange }: CryptoMethodProps) => {
-  const [selected, setSelected] = useState(data[0].id || value);
+  const [selected, setSelected] = useState(cryptoMethods[0].id || value);
   const [open, setOpen] = useState(false);
 
   const selectedItem = useMemo(
-    () => data.find((item) => item.id === selected),
+    () => cryptoMethods.find((item) => item.id === selected),
     [selected]
   );
 
   const filteredData = useMemo(
-    () => data.filter((item) => item.id !== selected),
+    () => cryptoMethods.filter((item) => item.id !== selected),
     [selected]
   );
 

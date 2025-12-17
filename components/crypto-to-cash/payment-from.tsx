@@ -1,21 +1,14 @@
 "use client";
 
+import { paymentFromData } from "@/lib/constants";
+import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { Button } from "../ui/button";
 import { Command, CommandItem, CommandList } from "../ui/command";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
-import { ChevronDown } from "lucide-react";
 
-const paymentFromData = [
-  { icon: "/metamask.svg", name: "Metamask" },
-  { icon: "/rainbow.svg", name: "Rainbow" },
-  { icon: "/walletconnect.svg", name: "WalletConnect" },
-  {
-    icon: "/other-wallet.svg",
-    name: "Other Crypto Wallets (Binance, Conibase, Bybit etc)",
-  },
-];
+
 
 interface PaymentFromProps {
   value?: string | null;
