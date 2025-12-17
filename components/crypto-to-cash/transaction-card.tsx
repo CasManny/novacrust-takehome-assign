@@ -47,7 +47,7 @@ export const CryptoTransactionCard = () => {
           <Copy className="ml-2" />
         </div>
 
-        <div className="grid grid-cols-1 gap-4 text-sm bg-[#F7F7F7] p-10 rounded-sm">
+        <div className="grid grid-cols-1 gap-4 text-sm bg-[#F7F7F7] p-5 sm:p-10 rounded-sm">
           {transactionDetails.map((item) => (
             <div key={item.label} className="flex justify-between items-center">
               <span className="text-[#4F4F4F]">{item.label}</span>
