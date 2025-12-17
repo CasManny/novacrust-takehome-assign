@@ -2,6 +2,11 @@
 
 This repository contains my solution for the Frontend Developer Take-Home Assessment using **Next.js**, **TypeScript**, **Tailwind CSS**, and **shadcn/ui**.
 
+## 🎥 Demo / Live Preview
+
+You can view the live project here:  
+[novacrust-crypto-rho.vercel.app](https://novacrust-crypto-rho.vercel.app/)
+
 ---
 
 ![Project Overview](/public//project-overview.png)

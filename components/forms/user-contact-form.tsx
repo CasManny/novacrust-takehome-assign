@@ -16,7 +16,8 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { DetailsHeader } from "../crypto-to-cash/details-header";
 import { useUserInput } from "@/context/user-input-context";
-import { Loader2 } from "lucide-react";
+import { ChevronDown, Loader2 } from "lucide-react";
+import Image from "next/image";
 
 // Validation schema
 const userFormSchema = z.object({
@@ -64,7 +65,7 @@ export const UserContactForm = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Recipient Email</FormLabel>
                 <FormControl>
                   <Input placeholder="Enter your email" {...field} />
                 </FormControl>
@@ -79,9 +80,27 @@ export const UserContactForm = () => {
             name="phone"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone Number</FormLabel>
+                <FormLabel>Recipient Phone Number</FormLabel>
                 <FormControl>
-                  <Input placeholder="Enter your phone number" {...field} />
+                  <div className="relative">
+                    <div className="absolute inset-y-0 left-3 flex items-center gap-1 text-sm">
+                      <Image
+                        src="/ng.svg"
+                        width={20}
+                        height={20}
+                        alt="country"
+                        className="w-5 h-5"
+                      />
+                      <span>+234</span>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+
+                    <Input
+                      placeholder="000 - 000 - 00000"
+                      className="pl-24"
+                      {...field}
+                    />
+                  </div>
                 </FormControl>
                 <FormMessage />
               </FormItem>

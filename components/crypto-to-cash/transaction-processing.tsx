@@ -35,7 +35,7 @@ export const TransactionProcessingCard = () => {
 
         <div className="flex justify-between items-center gap-1 bg-[#F7F7F7] p-2 rounded">
           <span className="text-sm text-[#4F4F4F]">Transaction ID</span>
-          <div className="flex items-center gap-2 bg-muted/50 px-3 py-1.5 rounded-md font-mono text-sm">
+          <div className="flex text-primary items-center gap-2 bg-muted/50 px-3 py-1.5 rounded-md font-mono text-sm">
             {transactionId}
             <button className="text-muted-foreground hover:text-primary transition">
               <Copy className="w-4 h-4" />

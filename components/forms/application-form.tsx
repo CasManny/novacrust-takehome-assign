@@ -61,7 +61,7 @@ export const ApplicationForm = () => {
             <FormItem>
               <div className="flex justify-between items-end border rounded-2xl px-5 py-3">
                 <div className="space-y-2">
-                  <p className="input-label">Your Pay</p>
+                  <p className="input-label">You Pay</p>
                   <p className="font-semibold text-2xl">1.0</p>
                 </div>
                 <FormControl>
@@ -81,7 +81,7 @@ export const ApplicationForm = () => {
             <FormItem>
               <div className="flex justify-between items-end border rounded-2xl px-5 py-3">
                 <div className="space-y-2">
-                  <p className="input-label">Your Received</p>
+                  <p className="input-label">You Received</p>
                   <p className="font-semibold text-2xl">1.0</p>
                 </div>
                 <FormControl>
