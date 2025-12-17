@@ -58,7 +58,7 @@ export const UserContactForm = () => {
       <DetailsHeader label="Recipient details" />
 
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           {/* Email */}
           <FormField
             control={form.control}

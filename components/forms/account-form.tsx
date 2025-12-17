@@ -45,7 +45,7 @@ export const AccountForm = () => {
     <div>
       <DetailsHeader label="Recipient details" />
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           {/* Payment Method */}
           <FormField
             control={form.control}
