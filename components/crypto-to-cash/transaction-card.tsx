@@ -10,14 +10,17 @@ const transactionDetails = [
   {
     label: "Amount to send:",
     value: "100 ETH",
+    copyable: true,
   },
   {
     label: "Network:",
     value: "ETH",
+    copyable: false,
   },
   {
     label: "Wallet:",
     value: "Other",
+    copyable: false,
   },
 ];
 
@@ -48,7 +51,13 @@ export const CryptoTransactionCard = () => {
           {transactionDetails.map((item) => (
             <div key={item.label} className="flex justify-between items-center">
               <span className="text-[#4F4F4F]">{item.label}</span>
-              <span className="font-medium">{item.value}</span>
+              <div className="flex items-center gap-1 font-medium">
+                <span>{item.value}</span>
+
+                {item.copyable && (
+                  <Copy className="w-4 h-4 cursor-pointer text-primary hover:text-primary" />
+                )}
+              </div>
             </div>
           ))}
         </div>
